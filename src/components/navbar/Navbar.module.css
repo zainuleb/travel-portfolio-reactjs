@@ -1,0 +1,251 @@
+.navbar {
+  padding: 13px 20px;
+  width: 100%;
+  background: rgb(101, 100, 100);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 100, 100, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.navbar_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_wrapper .logo_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 10%;
+}
+
+.logo_wrapper img {
+  width: 100%;
+  border-radius: 10%;
+}
+
+.wrapper .center_items {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.wrapper .menuItem_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+
+ul {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  margin-left: -35px;
+}
+
+ul li {
+  list-style: none;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: -20px;
+  padding: 50px 5px 10px 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.center_items ul li a{
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.center_items ul li::before {
+  background-color: #bd6e39;
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  top: -100px;
+  z-index: -1;
+}
+
+.center_items ul li:hover::before {
+  top: 1px;
+  transition: ease-in 0.6s;
+}
+
+.center_items ul li::after {
+  background-color: transparent;
+  content: "";
+  width: 100px;
+  height: 2px;
+  margin-top: 15px;
+}
+
+.center_items ul li:hover::after {
+  background-color: #bd6e39;
+  content: "";
+  width: 100px;
+  height: 2px;
+  margin-top: 15px;
+  transition: ease-in 0.8s;
+}
+
+.center_items ul li:nth-child(1) {
+  margin-left: 0px;
+  padding-left: 0;
+}
+
+ul li:hover {
+  cursor: pointer;
+  transition: ease-out 0.6s;
+}
+
+.menuItem_wrapper button:nth-child(1) {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 10px 25px;
+  color: #0e0c38;
+}
+
+.menuItem_wrapper button:nth-child(1):hover {
+  cursor: pointer;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+
+.humberg_button {
+  display: none;
+  position: relative;
+  border: none;
+}
+
+.topbar,
+.midbar,
+.bottombar {
+  position: absolute;
+  border: 2px solid #ffffff;
+  width: 40px;
+  height: 4px;
+  right: 10%;
+  top: -10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.midbar {
+  margin-top: 11px;
+}
+
+.bottombar {
+  margin-top: 22px;
+}
+
+.topbarcross {
+  position: absolute;
+  border: 2px solid #bd6e39;
+  width: 40px;
+  height: 4px;
+  right: 10%;
+  top: -10px;
+  transition: all ease-in-out 1.5s;
+  transform: rotate(-45deg) translate(-9px, 10px);
+}
+
+.midbarcross {
+  display: none;
+}
+
+.bottombarcross {
+  position: absolute;
+  border: 2px solid #bd6e39;
+  width: 40px;
+  height: 4px;
+  right: 10%;
+  top: -10px;
+  margin-top: 22px;
+  transition: all ease-in-out 1.5s;
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.absolute_wrapper {
+  display: none;
+  transition: all ease-out 1.5s;
+}
+
+.absolute_wrapper_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(101, 100, 100);
+  background: linear-gradient(
+    90deg,
+    rgba(101, 100, 100, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  height: 100vh;
+  transition: ease-in-out 1.3s;
+}
+
+.absolute_wrapper_items p {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.absolute_wrapper_items p:hover {
+  color: #bd6e39;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .humberg_button {
+    display: block;
+    z-index: 3;
+    border: none;
+  }
+  ul li:nth-child(1) {
+    display: none;
+  }
+
+  ul li:nth-child(2) {
+    display: none;
+  }
+
+  ul li:nth-child(3) {
+    display: none;
+  }
+
+  ul li:nth-child(4) {
+    display: none;
+  }
+
+  .menuItem_wrapper button:nth-child(1) {
+    display: none;
+  }
+
+  .absolute_wrapper {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: ease-in 1s;
+    z-index: 999;
+    margin-top: 100px;
+  }
+
+  .navbar_wrapper .logo_wrapper {
+    width: 15%;
+  }
+}
